@@ -1,8 +1,10 @@
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
+  background-color: #fff;
+  color: #333;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
 h1,
@@ -12,6 +14,7 @@ h4,
 h5,
 h6 {
   font-family: 'Stick No Bills', 'Roboto', Helvetica, sans-serif;
+  margin: 0 0 1rem;
 }
 
 .container {
@@ -22,6 +25,8 @@ h6 {
 
 img {
   width: 100%;
+  height: auto;
+  display: block;
 }
 
 .main-nav ul {
@@ -30,6 +35,8 @@ img {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #ddd;
 }
 
 .main-nav ul li {
@@ -39,9 +46,16 @@ img {
 
 .main-nav ul li a {
   display: block;
-  color: inherit;
+  color: #007bff;
   text-decoration: none;
   font-size: 1.25rem;
+  padding: 1rem;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a:focus {
+  background-color: #e9ecef;
+  color: #0056b3;
 }
 
 form input,
@@ -49,23 +63,61 @@ form textarea {
   display: block;
   width: 100%;
   margin-bottom: 1rem;
-  padding: .5rem 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
 form textarea {
   min-height: 150px;
   max-height: 150px;
   height: 150px;
-  resize: none;
+  resize: vertical;
 }
 
 form button {
-  background: none;
-  border: 2px solid black;
-  padding: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
   text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover,
+form button:focus {
+  background-color: #0056b3;
 }
 
 .site-footer {
   padding: 2rem 0;
+  background-color: #f8f9fa;
+  color: #6c757d;
+  text-align: center;
+}
+
+.skip {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.skip:focus {
+  top: 0;
+}
+
+/* Media Query for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  form button {
+    transition: none;
+  }
 }
